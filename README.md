@@ -1,3 +1,5 @@
+# TOC
+Any comments are encouranged in any ways (e.g. issue，comment etc） 
 <!-- vscode-markdown-toc -->
 * 1. [Why we need CTC? ---> looking back on history](#WhyweneedCTC---lookingbackonhistory)
 	* 1.1. [About CRNN](#AboutCRNN)
@@ -14,7 +16,7 @@
 	numbering=true
 	autoSave=true
 	/vscode-markdown-toc-config -->
-<!-- /vscode-markdown-toc --># TOC
+<!-- /vscode-markdown-toc -->
 
 
 
