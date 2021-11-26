@@ -191,10 +191,10 @@ alpha_col[1] = probs[0, target_prime[1]]
 
 
 # reference:
-[introductory look](https://distill.pub/2017/ctc/)
-[forward algorithm and backward algorithm](https://ogunlao.github.io/blog/2020/07/17/breaking-down-ctc-loss.html)
-[original paper](https://www.cs.toronto.edu/~graves/icml_2006.pdf)
-[pytorch implementation](https://medium.com/swlh/multi-digit-sequence-recognition-with-crnn-and-ctc-loss-using-pytorch-framework-269a7aca2a6)
+- [introductory look](https://distill.pub/2017/ctc/)
+- [forward algorithm and backward algorithm](https://ogunlao.github.io/blog/2020/07/17/breaking-down-ctc-loss.html)
+- [original paper](https://www.cs.toronto.edu/~graves/icml_2006.pdf)
+- [pytorch implementation](https://medium.com/swlh/multi-digit-sequence-recognition-with-crnn-and-ctc-loss-using-pytorch-framework-269a7aca2a6)
 
 
 
