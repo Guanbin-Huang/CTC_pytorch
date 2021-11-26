@@ -1,3 +1,4 @@
+# TOC
 <!-- vscode-markdown-toc -->
 * 1. [Why we need CTC? ---> looking back on history](#WhyweneedCTC---lookingbackonhistory)
 	* 1.1. [About CRNN](#AboutCRNN)
@@ -14,12 +15,9 @@
 	numbering=true
 	autoSave=true
 	/vscode-markdown-toc-config -->
-<!-- /vscode-markdown-toc -->Before reading<br>
-the tutorial is a collection of many other resources and my own notes. Note that the ref in the tutorial means the whole passage. And part to be referred means the part has been summarized or detailed by me. Feel free to click the \[the part to be referred\] to read the original.
-
-# TOC
-
-
+<!-- /vscode-markdown-toc -->
+Before reading<br>
+the tutorial is a collection of many other resources and my own notes. Note that the ref if any in the tutorial means the whole passage. And part to be referred if any means the part has been summarized or detailed by me. Feel free to click the \[the part to be referred\] to read the original.
 
 
 # CTC_pytorch
@@ -191,6 +189,12 @@ alpha_col[1] = probs[0, target_prime[1]]
     refer the details in CTC.py
 
 
+
+# reference:
+[introductory look](https://distill.pub/2017/ctc/)
+[forward algorithm and backward algorithm](https://ogunlao.github.io/blog/2020/07/17/breaking-down-ctc-loss.html)
+[original paper](https://www.cs.toronto.edu/~graves/icml_2006.pdf)
+[pytorch implementation](https://medium.com/swlh/multi-digit-sequence-recognition-with-crnn-and-ctc-loss-using-pytorch-framework-269a7aca2a6)
 
 
 
