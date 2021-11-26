@@ -3,7 +3,7 @@
 * 1. [Why we need CTC? ---> looking back on history](#WhyweneedCTC---lookingbackonhistory)
 	* 1.1. [About CRNN](#AboutCRNN)
 	* 1.2. [from Cross Entropy Loss to CTC Loss](#fromCrossEntropyLosstoCTCLoss)
-* 2. [Detail the CTC](#DetailtheCTC)
+* 2. [Details about CTC](#DetailsaboutCTC)
 	* 2.1. [intuition: forward algorithm](#intuition:forwardalgorithm)
 	* 2.2. [implementation: forward algorithm with dynamic programming](#implementation:forwardalgorithmwithdynamicprogramming)
 		* 2.2.1. [dummy input ---> what the input looks like](#dummyinput---whattheinputlookslike)
@@ -21,10 +21,10 @@ the tutorial is a collection of many other resources and my own notes. Note that
 
 
 # CTC_pytorch
-##  1. <a name='WhyweneedCTC---lookingbackonhistory'></a>1.Why we need CTC? ---> looking back on history
+##  1. <a name='WhyweneedCTC---lookingbackonhistory'></a>Why we need CTC? ---> looking back on history
 Feel free to skip it if you already know the purpose of CTC coming into being.
 
-###  1.1. <a name='AboutCRNN'></a>1.1 About CRNN
+###  1.1. <a name='AboutCRNN'></a>About CRNN
 We need to learn CRNN because in the context we need an output to be a sequence.
 
 
@@ -50,7 +50,7 @@ multi-digit sequence recognition
 
 <br><br>
 
-###  1.2. <a name='fromCrossEntropyLosstoCTCLoss'></a>1.2 from Cross Entropy Loss to CTC Loss
+###  1.2. <a name='fromCrossEntropyLosstoCTCLoss'></a>from Cross Entropy Loss to CTC Loss
 
 Usually, CE is applied to compute loss as the following way. And gt(also target) can be encoded as a stable matrix or vector.
 
@@ -90,9 +90,8 @@ In this context the input_length should be >= 16.
 
 For dealing with the expanded targets, CTC is introduced by using the ideas of ***(1) HMM forward algorithm*** and ***(2) dynamic programing***.
 
-##  2. <a name='DetailtheCTC'></a>2. Detail the CTC
-###  2.1. <a name='intuition:forwardalgorithm'></a>2.1 intuition: forward algorithm 
-
+##  2. <a name='DetailsaboutCTC'></a>Details about CTC 
+###  2.1. <a name='intuition:forwardalgorithm'></a>intuition: forward algorithm 
 <div align = center>
     <img src = './imgs/forward1.jpg' width = '100%'>
     <h4>image5</h4>
@@ -111,7 +110,7 @@ Note that moment is for audio recognition analogue. horizontal position is for O
 
 <br><br>
 
-###  2.2. <a name='implementation:forwardalgorithmwithdynamicprogramming'></a>2.2 implementation: forward algorithm with dynamic programming
+###  2.2. <a name='implementation:forwardalgorithmwithdynamicprogramming'></a>implementation: forward algorithm with dynamic programming
 
 the complete code is [CTC.py](CTC.py)
 
@@ -124,7 +123,7 @@ given 3 samples, they are<br>
 <br><br>
 
 
-####  2.2.1. <a name='dummyinput---whattheinputlookslike'></a>2.2.1 dummy input ---> what the input looks like
+####  2.2.1. <a name='dummyinput---whattheinputlookslike'></a>dummy input ---> what the input looks like
 ```python
 # ------------ a dummy input ----------------
 log_probs = torch.randn(15, 3, 27).log_softmax(2).detach().requires_grad_()# 15:input_length  3:batchsize  27:num of token(class)
@@ -143,7 +142,7 @@ target_lengths = torch.tensor([6,5,10], dtype = torch.long)
 ```
 <br><br>
 
-####  2.2.2. <a name='expandthetarget---whatthetargetmatrixlooklike'></a>2.2.2 expand the target ---> what the target matrix look like
+####  2.2.2. <a name='expandthetarget---whatthetargetmatrixlooklike'></a>expand the target ---> what the target matrix look like
 
 Recall that one target can be encoded in many different forms. So we introduce a targets mat to represent it as follows. 
 
@@ -170,7 +169,7 @@ probs = log_probs[:input_length, i].exp()
 Then we convert original inputs from log-space like this, referring to "In practice, the above recursion ..." in original paper https://www.cs.toronto.edu/~graves/icml_2006.pdf
 
 
-###  2.3. <a name='AlphaMatrix'></a>2.2.3 Alpha Matrix
+###  2.3. <a name='AlphaMatrix'></a>Alpha Matrix
 <div align = center>
     <img src = './imgs/alpha_column.jpg' width = '100%'>
     <h4> image8 </h4>
@@ -185,8 +184,8 @@ alpha_col[1] = probs[0, target_prime[1]]
 - blank is the index of blank(here it's 0)
 - target_prime[1] refers to the 1-st index of the token. e.g. "apple": "a", "orange": "o"
 
-###  2.4. <a name='Dynamicprogrammingbasedon3conditions'></a>2.4 Dynamic programming based on 3 conditions
-    refer the details in CTC.py
+###  2.4. <a name='Dynamicprogrammingbasedon3conditions'></a>Dynamic programming based on 3 conditions
+refer to the details in CTC.py
 
 
 
