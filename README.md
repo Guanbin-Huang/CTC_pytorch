@@ -1,4 +1,3 @@
-# TOC
 <!-- vscode-markdown-toc -->
 * 1. [Why we need CTC? ---> looking back on history](#WhyweneedCTC---lookingbackonhistory)
 	* 1.1. [About CRNN](#AboutCRNN)
@@ -15,7 +14,10 @@
 	numbering=true
 	autoSave=true
 	/vscode-markdown-toc-config -->
-<!-- /vscode-markdown-toc -->
+<!-- /vscode-markdown-toc --># TOC
+
+
+
 Before reading<br>
 the tutorial is a collection of many other resources and my own notes. Note that the ref if any in the tutorial means the whole passage. And part to be referred if any means the part has been summarized or detailed by me. Feel free to click the \[the part to be referred\] to read the original.
 
