@@ -1,14 +1,14 @@
 <!-- vscode-markdown-toc -->
-* 1. [1.Why we need CTC? ---> looking back on history](#WhyweneedCTC---lookingbackonhistory)
-	* 1.1. [1.1 About CRNN](#AboutCRNN)
-	* 1.2. [1.2 from Cross Entropy Loss to CTC Loss](#fromCrossEntropyLosstoCTCLoss)
-* 2. [2. Detail the CTC](#DetailtheCTC)
-	* 2.1. [2.1 intuition: forward algorithm](#intuition:forwardalgorithm)
-	* 2.2. [2.2 implementation: forward algorithm with dynamic programming](#implementation:forwardalgorithmwithdynamicprogramming)
-		* 2.2.1. [2.2.1 dummy input ---> what the input looks like](#dummyinput---whattheinputlookslike)
-		* 2.2.2. [2.2.2 expand the target ---> what the target matrix look like](#expandthetarget---whatthetargetmatrixlooklike)
-	* 2.3. [2.2.3 Alpha Matrix](#AlphaMatrix)
-	* 2.4. [2.4 Dynamic programming based on 3 conditions](#Dynamicprogrammingbasedon3conditions)
+* 1. [Why we need CTC? ---> looking back on history](#WhyweneedCTC---lookingbackonhistory)
+	* 1.1. [About CRNN](#AboutCRNN)
+	* 1.2. [from Cross Entropy Loss to CTC Loss](#fromCrossEntropyLosstoCTCLoss)
+* 2. [Detail the CTC](#DetailtheCTC)
+	* 2.1. [intuition: forward algorithm](#intuition:forwardalgorithm)
+	* 2.2. [implementation: forward algorithm with dynamic programming](#implementation:forwardalgorithmwithdynamicprogramming)
+		* 2.2.1. [dummy input ---> what the input looks like](#dummyinput---whattheinputlookslike)
+		* 2.2.2. [expand the target ---> what the target matrix look like](#expandthetarget---whatthetargetmatrixlooklike)
+	* 2.3. [Alpha Matrix](#AlphaMatrix)
+	* 2.4. [Dynamic programming based on 3 conditions](#Dynamicprogrammingbasedon3conditions)
 
 <!-- vscode-markdown-toc-config
 	numbering=true
